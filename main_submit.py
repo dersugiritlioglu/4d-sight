@@ -8,7 +8,7 @@ from scipy.spatial.distance import euclidean
 from math import *
 import imutils
 
-imagepath = 'E:/Users/lenovo/Desktop/4d_sight'
+imagepath = '.'
 imnames = ['Small_area.png',
 			'Small_area_rotated.png',
 			'StarMap.png']
@@ -83,9 +83,9 @@ for point in same_distances:
 	x_org, y_org = smaller_r_gray.shape[0],smaller_r_gray.shape[1]
 	starmap_crop = starmap_gray[point[0][0]-x_org:point[0][0]+x_org,point[0][1]-y_org:point[0][1]+y_org]
 	ul2,ur2,ll2,lr2=find_aligned(starmap_crop,small_r_gray)
-	print(point)
-	ipdb.set_trace()
-	if (ul1,ur1,ll1,lr1) != (-1,-1,-1,-1):
+	# print(point)
+	# ipdb.set_trace()
+	if (ul2,ur2,ll2,lr2) != (-1,-1,-1,-1):
 		print("Found! Around ", point) 
 
 ############################################################################################################
